@@ -25,3 +25,43 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.site-container .title span:nth-child(1):after {
+  color: #ff8e72;
+  opacity: 0;
+}
+
+.site-container:hover .title span:nth-child(1):after {
+  content: "o";
+  opacity: 100%;
+}
+
+.title span:nth-child(1):before {
+  color: #ff8e72;
+  opacity: 0;
+}
+
+.site-container:hover .title span:nth-child(1):before {
+  content: "i";
+  opacity: 100%;
+}
+
+.site-container:hover .title span:nth-child(2) {
+  display: none;
+}
+
+.site-container .portfolio-intro {
+  display: none;
+}
+
+.site-container:hover .domain-intro {
+  display: none;
+}
+
+.site-container:hover .portfolio-intro {
+  display: block;
+}
+
+.title span:nth-child(2) {
+  color: #ff8e72;
+}
