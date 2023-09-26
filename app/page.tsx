@@ -1,26 +1,25 @@
-import './globals.css'
-
-
+import PostListing from "../components/post_listing";
 export default function Home() {
   return (
     <main className="p-24 min-h-screen">
-      <div className="site-container min-w-full flex flex-col justify-between">
+      <div className="site-container flex flex-col justify-between">
         <div className="mb-24 relative flex-col place-items-center">
-          <h1 className="font-bold title text-5xl transition ease-in-out">
+          <h1 className="mb-1 font-bold title text-5xl">
             l<span>nc</span>ln.<span>io</span>
           </h1>
-          <p className="domain-intro">personal development blog</p>
-          <p className="portfolio-intro">software developer</p>
+          <p className="text-gray-600 domain-intro">development blog</p>
+          <p className="text-gray-600 portfolio-intro">software developer</p>
         </div>
 
-        <div className="flex min-w-full">
-          <div className="flex-col w-1/2">
-            <h2 className={"text-2xl font-bold text-gray-600"}>Projects</h2>
+        <div className="flex flex-col md:flex-row">
+          <div className="flex-col w-full md:w-1/2 lg:w-1/3 text-gray-600">
+            <h2 className={"text-2xl font-bold"}>Projects</h2>
+            <PostListing directory={"projects"} />
           </div>
 
-
-          <div className="flex-col w-1/2">
-            <h2 className={"text-2xl font-bold text-gray-600"}>Blogs</h2>
+          <div className="flex-col w-full md:w-1/2 lg:w-1/3">
+            <h2 className={"text-2xl font-bold text-gray-600"}>Blog</h2>
+            <PostListing directory={"blog"} />
 
           </div>
 
