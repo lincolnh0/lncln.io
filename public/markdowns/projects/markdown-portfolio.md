@@ -9,9 +9,9 @@ bannerImg: https://images.pexels.com/photos/606539/pexels-photo-606539.jpeg
 
 bannerImgAlt: Image of a journal notebook
 
-sourceUrl: https://lncln.io/
+sourceUrl: https://github.com/lincolnh0/lncln.io/
 
-demoUrl: https://github.com/lincolnh0/lncln.io/
+demoUrl: https://www.lncln.io/
 
 publish_date: "2023-09-26"
 
