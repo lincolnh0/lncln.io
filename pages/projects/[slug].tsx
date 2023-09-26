@@ -14,14 +14,14 @@ import DownloadButton from "@/components/download_button";
 
 export default function Project({ frontmatter, markdownBody}: any) {
   return (
-      <div className={"min-h-screen pt-12"}>
+      <div className={"min-h-screen py-12"}>
         <Head>
           <title>{ frontmatter.title }</title>
           <meta name="description" content={frontmatter.description} />
           <meta name="og:image" content={frontmatter.bannerImg} />
         </Head>
 
-        <div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[200px] lg:min-h[300px]"}>
+        <div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[300px] lg:min-h[500px]"}>
           <Image className={"object-cover"} fill={true} src={frontmatter.bannerImg} alt={frontmatter.bannerImgAlt} />
         </div>
         <div className={"px-12 py-2 flex justify-evenly flex-col-reverse lg:flex-row"}>
@@ -43,10 +43,12 @@ export default function Project({ frontmatter, markdownBody}: any) {
           </div>
           <div>
             <div className={"mx-4 mt-16 flex gap-2"}>
-            <a className={"py-2 px-4 rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
-               href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>
-            <a className={"py-2 px-4 rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
-               href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"} icon={faCode}/>Demo</a>
+              {frontmatter.sourceUrl &&
+              <a className={"py-2 px-4 rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
+               href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
+              {frontmatter.demoUrl &&
+              <a className={"py-2 px-4 rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
+               href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"} icon={faCode}/>Demo</a>}
             </div>
           </div>
         </div>

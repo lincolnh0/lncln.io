@@ -6,6 +6,7 @@ type PostListingProp = {
   directory: string
 }
 
+
 export default async function PostListing({ directory }: PostListingProp) {
   const allFileData = await getPostData(directory);
   let sortedFileData = allFileData.sort((a, b) => {
@@ -14,8 +15,8 @@ export default async function PostListing({ directory }: PostListingProp) {
   return (
       <ul>
         {sortedFileData.map((fileData) => (
-          <li key={fileData.title} className={"mt-2 text-gray-500"}>
-            <a href={`/${directory}/${fileData.id}`} className={""}>
+          <li key={fileData.title} className={"mt-2 py-2 pr-4 text-gray-500 hover:font-bold"}>
+            <a href={`/${directory}/${fileData.filename}`} className={""}>
               <h3 className={"hover:underline"}>{fileData.title}</h3>
             </a>
           </li>
@@ -31,7 +32,7 @@ async function getPostData(directory: string) {
   for await (const file of files ) {
     const markdown = await import(`public/markdowns/${directory}/${file}`);
     const content = matter(markdown.default);
-    fileData.push(content.data);
+    fileData.push({...content.data, ...{filename: file.substring(0, file.indexOf("."))}});
   }
   return fileData;
 }

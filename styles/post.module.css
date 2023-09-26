@@ -18,7 +18,7 @@
     font-weight: bolder;
 }
 
-.main p, .main ul {
+.main p, .main ul, .main ol {
     margin-bottom: 1.25rem;
     color: rgb(75, 85, 99);
 }
@@ -28,6 +28,10 @@
     list-style: square;
 }
 
+.main ol {
+    padding-left: 1rem;
+    list-style-type: decimal;
+}
 
 .main a {
     text-decoration: underline;
