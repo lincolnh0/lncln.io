@@ -24,7 +24,10 @@ export default function Project({ frontmatter, markdownBody}: any) {
         <div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[300px] lg:min-h[500px]"}>
           <Image className={"object-cover"} fill={true} src={frontmatter.bannerImg} alt={frontmatter.bannerImgAlt} />
         </div>
-        <div className={"px-12 py-2 flex justify-evenly flex-col-reverse lg:flex-row"}>
+        <div className={"px-12 py-2 flex justify-start flex-col"}>
+          <div className={"mx-4 mt-16 flex flex-col md:flex-row gap-4 justify-between"}>
+            <HomeButton />
+          </div>
           <div>
             <div className={"mx-4 my-16"}>
               <h1 className="mb-1 font-bold title text-4xl">
@@ -34,23 +37,20 @@ export default function Project({ frontmatter, markdownBody}: any) {
                 {frontmatter.description}
               </p>
             </div>
-            <div className={postStyles.main + " max-w-screen md:max-w-2xl"} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
+            <div className={postStyles.main} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
+            <div>
+              <div className={"mx-4 my-2 flex flex-col md:flex-row items-center gap-2"}>
+                {frontmatter.sourceUrl &&
+                    <a className={"py-2 px-4 rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
+                       href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
+                {frontmatter.demoUrl &&
+                    <a className={"py-2 px-4 rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
+                       href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"} icon={faCode}/>Demo</a>}
+                <DownloadButton path={"projects/" + frontmatter.id + ".md"}/>
+              </div>
+            </div>
+          </div>
 
-            <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4"}>
-              <HomeButton />
-              <DownloadButton path={"projects/" + frontmatter.id + ".md"}/>
-            </div>
-          </div>
-          <div>
-            <div className={"mx-4 mt-16 flex gap-2"}>
-              {frontmatter.sourceUrl &&
-              <a className={"py-2 px-4 rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
-               href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
-              {frontmatter.demoUrl &&
-              <a className={"py-2 px-4 rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
-               href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"} icon={faCode}/>Demo</a>}
-            </div>
-          </div>
         </div>
       </div>
 

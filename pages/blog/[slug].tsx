@@ -16,6 +16,10 @@ export default function Blog({ frontmatter, markdownBody}: any) {
           <title>{ frontmatter.title }</title>
           <meta name="description" content={frontmatter.description} />
         </Head>
+
+        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4 justify-between"}>
+          <HomeButton />
+        </div>
         <div className={"mx-4 my-16"}>
           <h1 className="mb-1 font-bold title text-4xl">
             {frontmatter.title}
@@ -24,11 +28,9 @@ export default function Blog({ frontmatter, markdownBody}: any) {
             {frontmatter.description}</p>
         </div>
         <div className={postStyles.main} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
-        <div className={"mx-4 my-2 flex gap-4"}>
-          <HomeButton />
+        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4 justify-between"}>
           <DownloadButton path={"blog/" + frontmatter.id + ".md"}/>
         </div>
-
       </div>
 
   )
