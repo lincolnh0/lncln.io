@@ -28,7 +28,7 @@ export default function Blog({ frontmatter, markdownBody}: any) {
             {frontmatter.description}</p>
         </div>
         <div className={postStyles.main} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
-        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4 justify-between"}>
+        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4"}>
           <DownloadButton path={"blog/" + frontmatter.id + ".md"}/>
         </div>
       </div>

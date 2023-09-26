@@ -39,7 +39,7 @@ export default function Project({ frontmatter, markdownBody}: any) {
             </div>
             <div className={postStyles.main} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
             <div>
-              <div className={"mx-4 my-2 flex flex-col md:flex-row items-center gap-2"}>
+              <div className={"mx-4 my-2 flex flex-col md:flex-row gap-2"}>
                 {frontmatter.sourceUrl &&
                     <a className={"py-2 px-4 rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
                        href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
