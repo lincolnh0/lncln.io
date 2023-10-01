@@ -18,7 +18,7 @@ publish_date: "2021-11-30"
 ---
 
 ## Summary
-With multiple sports back in full swing afte Christmas, the sports betting and gambling industry will continue to make profits off die-hard sports fans and adrenaline junkies.
+With multiple sports back in full swing after Christmas, the sports betting and gambling industry will continue to make profits off die-hard sports fans and adrenaline junkies.
 
 With events such as the SuperBowl and March Madness coming up, I dove head first into the world of sports betting and was overwhelmed by the amount of bookmakers promotions, betting strategies and just pure chaotic information out there.
 
