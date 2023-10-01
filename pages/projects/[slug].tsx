@@ -41,10 +41,10 @@ export default function Project({ frontmatter, markdownBody}: any) {
             <div>
               <div className={"mx-4 my-2 flex flex-col md:flex-row gap-2"}>
                 {frontmatter.sourceUrl &&
-                    <a className={"py-2 px-4 inline-block rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
+                    <a target="_blank" className={"py-2 px-4 inline-block rounded shadow w-fit bg-blue-300 text-gray-600 font-bold hover:bg-blue-400 hover:text-gray-700"}
                        href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
                 {frontmatter.demoUrl &&
-                    <a className={"py-2 px-4 inline-block rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
+                    <a target="_blank" className={"py-2 px-4 inline-block rounded shadow w-fit bg-orange-300 text-gray-600 font-bold hover:bg-orange-400 hover:text-gray-700"}
                        href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"} icon={faCode}/>Demo</a>}
                 <DownloadButton path={"projects/" + frontmatter.id + ".md"}/>
               </div>
