@@ -5,7 +5,7 @@ title: ZLI
 
 description: dev zuite pt.2
 
-bannerImg: https://images.pexels.com/photos/394376/pexels-photo-394376.jpeg
+bannerImg: https://images.pexels.com/photos/394376/pexels-photo-394376.jpeg?w=1080
 
 bannerImgAlt: Free Gray Feather on Tree Stem Stock Photo
 

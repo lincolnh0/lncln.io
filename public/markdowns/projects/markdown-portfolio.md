@@ -5,7 +5,7 @@ title: Markdown portfolio
 
 description: a meta post
 
-bannerImg: https://images.pexels.com/photos/606539/pexels-photo-606539.jpeg
+bannerImg: https://images.pexels.com/photos/606539/pexels-photo-606539.jpeg?w=1080
 
 bannerImgAlt: Image of a journal notebook
 

@@ -5,7 +5,7 @@ title: Basketball Calendar
 
 description: daily jersey collection
 
-bannerImg: https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg
+bannerImg: https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?w=1080
 
 bannerImgAlt: Free Basketball Hoop in Basketball Court Stock Photo
 

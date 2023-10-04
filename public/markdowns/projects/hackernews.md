@@ -5,7 +5,7 @@ title: Hackernews
 
 description: Newsfeed build with Next.js
 
-bannerImg: https://images.pexels.com/photos/5998828/pexels-photo-5998828.jpeg
+bannerImg: https://images.pexels.com/photos/5998828/pexels-photo-5998828.jpeg?w=1080
 
 bannerImgAlt: Image of a newsfeed on a tablet
 

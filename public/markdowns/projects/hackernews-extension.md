@@ -5,7 +5,7 @@ title: Hackernews chrome extension
 
 description: Walling myself in
 
-bannerImg: https://images.pexels.com/photos/270700/pexels-photo-270700.jpeg
+bannerImg: https://images.pexels.com/photos/270700/pexels-photo-270700.jpeg?w=1080
 
 bannerImgAlt: Image of a cursor clicking on a link titled "Settings"
 

@@ -5,7 +5,7 @@ title: Paint by numbers
 
 description: would've made good NFTs
 
-bannerImg: https://images.pexels.com/photos/3737703/pexels-photo-3737703.jpeg
+bannerImg: https://images.pexels.com/photos/3737703/pexels-photo-3737703.jpeg?w=1080
 
 bannerImgAlt: Free Abstract background of colorful painted water and oil Stock Photo
 

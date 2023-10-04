@@ -5,7 +5,7 @@ title: OddOwl
 
 description: nothing suspicious here
 
-bannerImg: https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg
+bannerImg: https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg?w=1080
 
 bannerImgAlt: Free Brown and Black Owl Staring Stock Photo
 
