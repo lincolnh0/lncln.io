@@ -19,7 +19,7 @@ body {
 }
 
 .site-container .title span:nth-child(1):after {
-  color: #ff8e72;
+  color: #FF6347;
   opacity: 0;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .title span:nth-child(1):before {
-  color: #ff8e72;
+  color: #FF6347;
   opacity: 0;
 }
 
@@ -55,5 +55,5 @@ body {
 }
 
 .title span:nth-child(2) {
-  color: #ff8e72;
+  color: #FF6347;
 }
