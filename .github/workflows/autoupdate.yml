@@ -7,8 +7,7 @@ on:
 
 jobs:
   autoupdate:
-    permissions:
-      pull-requests: write
+    permissions: write-all
     name: autoupdate
     runs-on: ubuntu-22.04
     steps:
