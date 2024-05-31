@@ -14,7 +14,7 @@ export default async function PostListing({ directory }: PostListingProp) {
   return (
       <ul>
         {sortedFileData.map((fileData) => (
-          <li key={fileData.title} className={"mt-2 py-2 pr-4 text-gray-500 hover:font-bold"}>
+          <li key={fileData.title} className={"mt-2 py-2  text-primary hover:font-bold"}>
             <a href={`/${directory}/${fileData.id}`} className={""}>
               <h3 className={"hover:underline"}>{fileData.title}</h3>
             </a>

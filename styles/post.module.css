@@ -2,26 +2,8 @@
 .main {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
 }
 
-.main h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-weight: bolder;
-}
-
-.main h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bolder;
-}
-
-.main p, .main ul, .main ol {
-    margin-bottom: 1.25rem;
-    color: rgb(75, 85, 99);
-}
 
 .main ul {
     padding-left: 1rem;
@@ -33,14 +15,12 @@
     list-style-type: decimal;
 }
 
-.main a {
-    text-decoration: underline;
-    color: rgb(107, 114, 128);
+.main li::marker {
+    color: #fb8500;
 }
 
-
 .main code {
-    color: #ff8e72;
+    color: #fb8500;
     font-family: monospace, monospace;
     padding: 2px;
 }

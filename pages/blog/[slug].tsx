@@ -8,60 +8,59 @@ import postStyles from "@/styles/post.module.css";
 import HomeButton from "@/components/home_button";
 import DownloadButton from "@/components/download_button";
 
-export default function Blog({ frontmatter, markdownBody}: any) {
-  return (
-      <div className={"p-12 min-h-screen"}>
+export default function Blog({frontmatter, markdownBody}: any) {
+    return (
+        <div className={"p-12 min-h-screen"}>
 
-        <Head>
-          <title>{ frontmatter.title }</title>
-          <meta name="description" content={frontmatter.description} />
-        </Head>
+            <Head>
+                <title>{frontmatter.title}</title>
+                <meta name="description" content={frontmatter.description}/>
+            </Head>
 
-        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4 justify-between"}>
-          <HomeButton />
+            <div className={"prose mx-auto text-primary"}>
+                <HomeButton/>
+                <h1>
+                    {frontmatter.title}
+                </h1>
+                <p className={"opacity-60 italic font-light"}>{frontmatter.description}</p>
+                <div className={postStyles.main} dangerouslySetInnerHTML={{__html: markdownBody}}></div>
+                <div className={"mt-8 flex flex-col md:flex-row gap-4"}>
+                    <DownloadButton path={"blog/" + frontmatter.id + ".md"}/>
+                </div>
+            </div>
         </div>
-        <div className={"mx-4 my-16"}>
-          <h1 className="mb-1 font-bold title text-4xl">
-            {frontmatter.title}
-          </h1>
-          <p className={"text-gray-500"}>
-            {frontmatter.description}</p>
-        </div>
-        <div className={postStyles.main} dangerouslySetInnerHTML={{ __html: markdownBody }}></div>
-        <div className={"mx-4 my-2 flex flex-col md:flex-row gap-4"}>
-          <DownloadButton path={"blog/" + frontmatter.id + ".md"}/>
-        </div>
-      </div>
 
-  )
+    )
 }
 
-export async function getStaticProps(context:any) {
-  const { slug } = context.params;
+export async function getStaticProps(context: any) {
+    const {slug} = context.params;
 
-  const data:any  = await import(`public/markdowns/blog/${slug}.md`);
-  const content = await matter(data.default);
+    const data: any = await import(`public/markdowns/blog/${slug}.md`);
+    const content = await matter(data.default);
 
-  return {
-    props: {
-      frontmatter: content.data,
-      markdownBody: marked(content.content),
-    },
-  }
+    return {
+        props: {
+            frontmatter: content.data,
+            markdownBody: marked(content.content),
+        },
+    }
 }
 
 export async function getStaticPaths() {
-  const directoryPath = path.join(process.cwd(), "/public/markdowns/blog/");
-  let fileNames: string[];
-  fileNames = [];
-  const files = fs.readdirSync(directoryPath);
-  files.forEach(function (file) {
-    fileNames.push(file.substring(0, file.indexOf(".")));
-  });
-  const paths = fileNames.map(slug => { return { params: { slug: slug } } })
-  return {
-    paths,
-    fallback: false,
-  }
+    const directoryPath = path.join(process.cwd(), "/public/markdowns/blog/");
+    let fileNames: string[];
+    fileNames = [];
+    const files = fs.readdirSync(directoryPath);
+    files.forEach(function (file) {
+        fileNames.push(file.substring(0, file.indexOf(".")));
+    });
+    const paths = fileNames.map(slug => {
+        return {params: {slug: slug}}
+    })
+    return {
+        paths,
+        fallback: false,
+    }
 
 }
