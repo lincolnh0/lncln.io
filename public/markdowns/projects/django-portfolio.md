@@ -5,7 +5,7 @@ title: Django portfolio
 
 description: A (used to be) very meta post
 
-bannerImg: https://images.pexels.com/photos/7527328/pexels-photo-7527328.jpeg
+bannerImg: https://images.pexels.com/photos/7527328/pexels-photo-7527328.jpeg?w=1080
 
 bannerImgAlt: Image of a skyscraper
 

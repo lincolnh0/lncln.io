@@ -5,7 +5,7 @@ title: Zendit
 
 description: Automating the boring parts
 
-bannerImg: https://images.pexels.com/photos/796206/pexels-photo-796206.jpeg
+bannerImg: https://images.pexels.com/photos/796206/pexels-photo-796206.jpeg?w=1080
 
 bannerImgAlt: Free Space Shuttle Launch during Nighttime Stock Photo
 

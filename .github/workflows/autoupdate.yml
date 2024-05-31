@@ -1,0 +1,19 @@
+name: Auto Update
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  autoupdate:
+    permissions: write-all
+    name: autoupdate
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: docker://chinthakagodawita/autoupdate-action:v1
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          PR_FILTER: "labelled"
+          PR_LABELS: "autoupdate"
+          MERGE_MSG: "The branch has been updated."

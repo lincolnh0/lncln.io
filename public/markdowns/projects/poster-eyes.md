@@ -5,7 +5,7 @@ title: Poster Eyes
 
 description: the greatest sets at home
 
-bannerImg: https://images.pexels.com/photos/247801/pexels-photo-247801.jpeg
+bannerImg: https://images.pexels.com/photos/247801/pexels-photo-247801.jpeg?w=1080
 
 bannerImgAlt: Free Postage Stamp  Stock Photo
 
