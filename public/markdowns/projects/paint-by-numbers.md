@@ -11,7 +11,7 @@ bannerImgAlt: Free Abstract background of colorful painted water and oil Stock P
 
 sourceUrl: https://github.com/lincolnh0/paint-by-numbers
 
-demoUrl:: https://github.com/lincolnh0/paint-by-numbers/blob/master/painit_by_numbers.ipynb
+demoUrl: https://github.com/lincolnh0/paint-by-numbers/blob/master/painit_by_numbers.ipynb
 
 publish_date: "2021-11-30"
 
