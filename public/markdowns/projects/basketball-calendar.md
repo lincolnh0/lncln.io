@@ -11,7 +11,7 @@ bannerImgAlt: Free Basketball Hoop in Basketball Court Stock Photo
 
 sourceUrl: https://github.com/lincolnh0/basketball-calendar
 
-demoUrl: https://mir.lncln.io/
+demoUrl: https://basketball.lncln.io/
 
 publish_date: "2023-06-28"
 
