@@ -20,7 +20,7 @@ publish_date: "2024-05-31"
 ## Summary
 
 After a few years since the initial release of OddOwl, I decided to revisit the project and give it a fresh new look.
-Having recently dabbled with the SvelteKit framework, I decided to use it to rebuild OddOwl.
+Having recently dabbled with the SvelteKit framework, this became an obvious choice to rebuild OddOwl.
 
 The result is Owly Odds, a vision revisited to provide a better user experience and a more modern look. Using
 TailwindCss in conjunction with dasiyUI, information can be displayed in a more visually appealing manner, with various
