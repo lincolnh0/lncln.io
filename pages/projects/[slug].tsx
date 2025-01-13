@@ -11,6 +11,7 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {faCode} from "@fortawesome/free-solid-svg-icons";
 import HomeButton from "@/components/home_button";
 import DownloadButton from "@/components/download_button";
+import Script from 'next/script'
 
 export default function Project({frontmatter, markdownBody}: any) {
     return (
@@ -19,6 +20,7 @@ export default function Project({frontmatter, markdownBody}: any) {
                 <title>{frontmatter.title}</title>
                 <meta name="description" content={frontmatter.description}/>
                 <meta name="og:image" content={frontmatter.bannerImg}/>
+                <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
             </Head>
 
             {/*<div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[300px] lg:min-h[500px]"}>*/}
