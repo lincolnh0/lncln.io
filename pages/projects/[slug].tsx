@@ -16,11 +16,11 @@ import Script from 'next/script'
 export default function Project({frontmatter, markdownBody}: any) {
     return (
         <div className={"min-h-screen py-12"}>
+            <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
             <Head>
                 <title>{frontmatter.title}</title>
                 <meta name="description" content={frontmatter.description}/>
                 <meta name="og:image" content={frontmatter.bannerImg}/>
-                <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
             </Head>
 
             {/*<div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[300px] lg:min-h[500px]"}>*/}

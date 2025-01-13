@@ -12,11 +12,10 @@ import Script from 'next/script'
 export default function Blog({frontmatter, markdownBody}: any) {
     return (
         <div className={"p-12 min-h-screen"}>
-
+            <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
             <Head>
                 <title>{frontmatter.title}</title>
                 <meta name="description" content={frontmatter.description}/>
-                <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
             </Head>
 
             <div className={"prose mx-auto text-primary"}>
