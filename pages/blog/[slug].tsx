@@ -24,10 +24,11 @@ export default function Blog({frontmatter, markdownBody}: any) {
                     {frontmatter.title}
                 </h1>
                 <p className={"opacity-60 italic font-light"}>{frontmatter.description}</p>
-                <div className={postStyles.main} dangerouslySetInnerHTML={{__html: markdownBody}}></div>
+
                 <div className={"mt-8 flex flex-col md:flex-row gap-4"}>
                     <DownloadButton path={"blog/" + frontmatter.id + ".md"}/>
                 </div>
+                <div className={postStyles.main} dangerouslySetInnerHTML={{__html: markdownBody}}></div>
             </div>
         </div>
 

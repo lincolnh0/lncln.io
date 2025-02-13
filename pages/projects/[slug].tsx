@@ -1,14 +1,11 @@
 import {marked} from "marked";
 import matter from 'gray-matter';
 import Head from 'next/head'
-import Image from 'next/image';
 import path from "path";
 import fs from "fs";
 import "../../app/globals.css"
 import postStyles from "../../styles/post.module.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithub} from "@fortawesome/free-brands-svg-icons";
-import {faCode} from "@fortawesome/free-solid-svg-icons";
+import {Code, Github} from "lucide-react";
 import HomeButton from "@/components/home_button";
 import DownloadButton from "@/components/download_button";
 import Script from 'next/script'
@@ -23,10 +20,6 @@ export default function Project({frontmatter, markdownBody}: any) {
                 <meta name="og:image" content={frontmatter.bannerImg}/>
             </Head>
 
-            {/*<div className={"min-w-max overflow-hidden relative min-h-[100px] md:min-h-[300px] lg:min-h[500px]"}>*/}
-            {/*    <Image className={"object-cover"} fill={true} src={frontmatter.bannerImg}*/}
-            {/*           alt={frontmatter.bannerImgAlt}/>*/}
-            {/*</div>*/}
             <div className={"px-12 py-2 flex justify-start flex-col"}>
 
                 <div className={"prose mx-auto text-primary"}>
@@ -36,19 +29,19 @@ export default function Project({frontmatter, markdownBody}: any) {
                         {frontmatter.title}
                     </h1>
                     <p className={"opacity-60 italic font-light"}>{frontmatter.description}</p>
-                    <article className={postStyles.main} dangerouslySetInnerHTML={{__html: markdownBody}}></article>
+
                     <div className={"mt-8 flex flex-col md:flex-row gap-2"}>
                         {frontmatter.sourceUrl &&
                             <a target="_blank"
                                className={"btn btn-neutral"}
-                               href={frontmatter.sourceUrl}><FontAwesomeIcon className={"pr-2"} icon={faGithub}/>Source</a>}
+                               href={frontmatter.sourceUrl}><Github size={16}/>Source</a>}
                         {frontmatter.demoUrl &&
                             <a target="_blank"
                                className={"btn btn-neutral"}
-                               href={frontmatter.demoUrl}><FontAwesomeIcon className={"pr-2"}
-                                                                           icon={faCode}/>Demo</a>}
+                               href={frontmatter.demoUrl}><Code size={16}/>Demo</a>}
                         <DownloadButton path={"projects/" + frontmatter.id + ".md"}/>
                     </div>
+                    <article className={postStyles.main} dangerouslySetInnerHTML={{__html: markdownBody}}></article>
                 </div>
 
             </div>

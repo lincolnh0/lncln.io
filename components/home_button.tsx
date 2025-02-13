@@ -1,12 +1,11 @@
-import {faArrowLeft, faHouse} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ArrowLeft} from "lucide-react";
 
 export default function HomeButton() {
     return (
 
         <a className={"btn btn-ghost my-4"}
            href={"/"}>
-            <FontAwesomeIcon className={"pr-2"} size={"sm"} icon={faHouse}/>
+            <ArrowLeft size={16}/>
             Back to home
 
         </a>
