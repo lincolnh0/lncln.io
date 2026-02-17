@@ -58,7 +58,9 @@ export async function generateStaticParams() {
     const directoryPath = path.join(process.cwd(), "/public/markdowns/blog/");
     const files = fs.readdirSync(directoryPath);
     
-    return files.map(file => ({
-        slug: file.substring(0, file.indexOf("."))
-    }));
+    return files
+        .filter(file => file.endsWith('.md'))
+        .map(file => ({
+            slug: file.replace(/\.md$/, '')
+        }));
 }
