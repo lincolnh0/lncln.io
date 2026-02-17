@@ -8,13 +8,19 @@ import HomeButton from "@/components/home_button";
 import DownloadButton from "@/components/download_button";
 import { Metadata } from 'next';
 
+// Configure marked for security
+marked.setOptions({
+    mangle: false,
+    headerIds: false
+});
+
 type Props = {
     params: { slug: string }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = params;
-    const data: any = await import(`public/markdowns/projects/${slug}.md`);
+    const data: any = await import(`../../../public/markdowns/projects/${slug}.md`);
     const content = matter(data.default);
     
     return {
@@ -29,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Project({ params }: Props) {
     const { slug } = params;
     
-    const data: any = await import(`public/markdowns/projects/${slug}.md`);
+    const data: any = await import(`../../../public/markdowns/projects/${slug}.md`);
     const content = matter(data.default);
     const frontmatter = content.data;
     const markdownBody = marked(content.content);
