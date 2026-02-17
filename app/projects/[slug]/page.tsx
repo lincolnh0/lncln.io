@@ -8,12 +8,6 @@ import HomeButton from "@/components/home_button";
 import DownloadButton from "@/components/download_button";
 import { Metadata } from 'next';
 
-// Configure marked for security
-marked.setOptions({
-    mangle: false,
-    headerIds: false
-});
-
 type Props = {
     params: { slug: string }
 }
