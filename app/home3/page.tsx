@@ -8,14 +8,14 @@ export default function Home3() {
       <div className="grid md:grid-cols-2 min-h-screen">
         {/* Left Side - Content */}
         <div className="flex items-center justify-center p-8 md:p-16 bg-slate-900">
-          <div className="max-w-lg">
+          <div className="max-w-lg home3-container">
             <div className="mb-8">
               <div className="inline-block px-4 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full mb-6">
                 <span className="text-orange-400 text-sm font-medium">Available for work</span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight home-title-intro">
                 Hi, I&apos;m <br />
-                <span className="text-orange-500">Lincoln</span>
+                <span className="home-title">l<span>nc</span>ln.<span>io</span></span>
               </h1>
               <p className="text-xl text-slate-400 mb-8">
                 A software engineer who loves building products that make a difference.

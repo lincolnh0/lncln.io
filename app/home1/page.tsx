@@ -6,12 +6,12 @@ export default function Home1() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-orange-50 to-slate-100">
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-16 home1-container">
           <div className="inline-block mb-6 px-4 py-2 bg-orange-100 rounded-full">
             <span className="text-orange-600 font-semibold text-sm">👋 Welcome to my portfolio</span>
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-orange-600 to-slate-900">
-            l<span className="text-orange-500">nc</span>ln.<span className="text-orange-500">io</span>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-slate-900 home-title">
+            l<span>nc</span>ln.<span>io</span>
           </h1>
           <p className="text-2xl text-slate-600 mb-4">Software Engineer</p>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8">
