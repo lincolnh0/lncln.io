@@ -1,10 +1,7 @@
 
 import './globals.css'
 import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
 import Script from 'next/script'
-
-const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
     title: 'lncln.io',
@@ -19,7 +16,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <Script src="https://cloud.umami.is/script.js" data-website-id="3ee7558b-1a42-4190-b237-5ff95c5468d2"></Script>   
-        <body className={inter.className}>{children}</body>
+        <body className="font-sans">{children}</body>
         </html>
     )
 }
