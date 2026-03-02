@@ -57,15 +57,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex gap-6 text-slate-600">
-                <a href="#" className="hover:text-orange-500 transition-colors font-medium">
+                <a href="mailto:me@lncln.io" className="hover:text-orange-500 transition-colors font-medium">
                   Email
                 </a>
                 <span className="text-slate-300">•</span>
-                <a href="#" className="hover:text-orange-500 transition-colors font-medium">
+                <a href="https://github.com/lincolnh0" className="hover:text-orange-500 transition-colors font-medium">
                   GitHub
                 </a>
                 <span className="text-slate-300">•</span>
-                <a href="#" className="hover:text-orange-500 transition-colors font-medium">
+                <a href="https://www.linkedin.com/in/lincoln-ho/" className="hover:text-orange-500 transition-colors font-medium">
                   LinkedIn
                 </a>
               </div>
