@@ -5,7 +5,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       {/* Minimal Header with Large Typography */}
       <div className="container mx-auto px-6 py-20 md:py-32 max-w-4xl">
-        <div className="border-l-4 border-orange-500 pl-8 mb-20 home2-container">
+        <div className="border-l-4 border-orange-500 pl-8 mb-20 home-container">
           <h1 className="text-7xl md:text-8xl font-bold mb-4 text-slate-900 tracking-tight home-title">
             l<span>nc</span>ln.<span>io</span>
           </h1>

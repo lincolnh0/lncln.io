@@ -58,31 +58,31 @@ body {
   color: #fb8500;
 }
 
-/* Shared hover effects for all home pages */
-.home2-container .home-title span:nth-child(1):after {
+/* Homepage hover effects */
+.home-container .home-title span:nth-child(1):after {
   color: #fb8500;
   opacity: 0;
 }
 
-.home2-container:hover .home-title span:nth-child(1):after {
+.home-container:hover .home-title span:nth-child(1):after {
   content: "o";
   opacity: 1;
 }
 
-.home2-container .home-title span:nth-child(1):before {
+.home-container .home-title span:nth-child(1):before {
   color: #fb8500;
   opacity: 0;
 }
 
-.home2-container:hover .home-title span:nth-child(1):before {
+.home-container:hover .home-title span:nth-child(1):before {
   content: "i";
   opacity: 1;
 }
 
-.home2-container:hover .home-title span:nth-child(2) {
+.home-container:hover .home-title span:nth-child(2) {
   display: none;
 }
 
-.home2-container .home-title span:nth-child(2) {
+.home-container .home-title span:nth-child(2) {
   color: #fb8500;
 }
