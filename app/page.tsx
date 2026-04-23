@@ -28,7 +28,7 @@ export default async function Home() {
             <header className="border-b-4 border-black brutal-header">
                 <div className="max-w-6xl mx-auto px-6 py-8 md:py-16">
                     <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none brutal-title">
-                        l<span className="brutal-nc">nc</span>ln<span className="brutal-io text-white bg-black px-2 ml-1">.io</span>
+                        l<span className="brutal-nc"><span>nc</span></span>ln<span className="brutal-io text-white bg-black px-2 ml-1"><span>.io</span></span>
                     </h1>
                     <div className="mt-6">
                         <span className="bg-black text-white px-3 py-1 text-sm font-bold uppercase">Software Engineer</span>
