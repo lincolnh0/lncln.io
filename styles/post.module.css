@@ -16,12 +16,13 @@
 }
 
 .main li::marker {
-    color: #fb8500;
+    color: black;
 }
 
 .main code {
-    color: #fb8500;
+    color: black;
     font-family: monospace, monospace;
-    background: none;
+    background: #f0f0f0;
     padding: 2px;
+    border: 1px solid black;
 }

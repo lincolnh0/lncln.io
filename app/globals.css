@@ -86,3 +86,25 @@ body {
 .home-container .home-title span:nth-child(2) {
   color: #fb8500;
 }
+
+/* Brutalist hover effects: lncln.io → lincoln. */
+/* l + [i + nc + o] + ln + [.] = lincoln. */
+.brutal-header:hover .brutal-title .brutal-nc::before {
+  content: "i";
+  background: black;
+  color: white;
+}
+
+.brutal-header:hover .brutal-title .brutal-nc::after {
+  content: "o";
+  background: black;
+  color: white;
+}
+
+.brutal-header:hover .brutal-title .brutal-io > span {
+  display: none;
+}
+
+.brutal-header:hover .brutal-title .brutal-io::before {
+  content: ".";
+}
