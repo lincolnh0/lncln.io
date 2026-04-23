@@ -6,6 +6,9 @@ import Script from 'next/script'
 export const metadata: Metadata = {
     title: 'lncln.io',
     description: 'portfolio and development blog',
+    icons: {
+        icon: '/favicon.ico',
+    },
 }
 
 export default function RootLayout({

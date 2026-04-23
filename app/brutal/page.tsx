@@ -25,8 +25,8 @@ async function getPostData(directory: string) {
 export default async function BrutalHome() {
     const projects = await getPostData("projects");
     const blogs = await getPostData("blog");
-    const limitedProjects = projects.slice(0, 5);
-    const limitedBlogs = blogs.slice(0, 5);
+    const limitedProjects = projects.slice(0, 6);
+    const limitedBlogs = blogs.slice(0, 6);
 
     return (
         <main className="min-h-screen bg-white text-black font-mono">
@@ -69,7 +69,7 @@ export default async function BrutalHome() {
                             </a>
                         ))}
                     </div>
-                    {projects.length > 5 && (
+                    {projects.length > 6 && (
                         <a href="/projects" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
                             See all projects →
                         </a>
@@ -102,7 +102,7 @@ export default async function BrutalHome() {
                             </a>
                         ))}
                     </div>
-                    {blogs.length > 5 && (
+                    {blogs.length > 6 && (
                         <a href="/blog" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
                             See all posts →
                         </a>
