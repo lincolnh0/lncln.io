@@ -88,25 +88,13 @@ body {
 }
 
 /* Brutalist hover effects: lncln.io → lincoln. */
-/* Structure: l <span.brutal-nc><span>nc</span></span> ln <span.brutal-io><span>.io</span></span> */
-.brutal-header .brutal-title .brutal-nc::before,
-.brutal-header .brutal-title .brutal-nc::after,
-.brutal-header .brutal-title .brutal-io::before {
-  opacity: 0;
-}
-
-.brutal-header:hover .brutal-title .brutal-nc > span {
-  display: none;
-}
-
+/* l + [i + nc + o] + ln + [.] = lincoln. */
 .brutal-header:hover .brutal-title .brutal-nc::before {
   content: "i";
-  opacity: 1;
 }
 
 .brutal-header:hover .brutal-title .brutal-nc::after {
   content: "o";
-  opacity: 1;
 }
 
 .brutal-header:hover .brutal-title .brutal-io > span {
@@ -115,5 +103,4 @@ body {
 
 .brutal-header:hover .brutal-title .brutal-io::before {
   content: ".";
-  opacity: 1;
 }
