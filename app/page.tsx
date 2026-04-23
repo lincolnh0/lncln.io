@@ -28,7 +28,7 @@ export default function Home() {
               <p className="text-slate-600 mt-2">Selected works</p>
             </div>
             <div className="pl-4">
-              <PostListing directory="projects" />
+              <PostListing directory="projects" limit={5} />
             </div>
           </section>
 
@@ -41,7 +41,7 @@ export default function Home() {
               <p className="text-slate-600 mt-2">Thoughts and writings</p>
             </div>
             <div className="pl-4">
-              <PostListing directory="blog" />
+              <PostListing directory="blog" limit={5} />
             </div>
           </section>
 

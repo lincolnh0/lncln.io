@@ -3,24 +3,36 @@ import fs from "fs";
 import matter from "gray-matter";
 
 type PostListingProp = {
-  directory: string
+  directory: string;
+  limit?: number;
 }
 
-export default async function PostListing({ directory }: PostListingProp) {
+export default async function PostListing({ directory, limit }: PostListingProp) {
   const allFileData = await getPostData(directory);
   let sortedFileData = allFileData.sort((a, b) => {
     return new Date(b.publish_date).getTime() - new Date(a.publish_date).getTime();
-  })
+  });
+  const hasMore = limit !== undefined && sortedFileData.length > limit;
+  if (limit !== undefined) {
+    sortedFileData = sortedFileData.slice(0, limit);
+  }
   return (
-      <ul>
-        {sortedFileData.map((fileData) => (
-          <li key={fileData.title} className={"mt-2 py-2  text-primary hover:font-bold"}>
-            <a href={`/${directory}/${fileData.id}`} className={""}>
-              <h3 className={"hover:underline"}>{fileData.title}</h3>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <>
+        <ul>
+          {sortedFileData.map((fileData) => (
+            <li key={fileData.title} className={"mt-2 py-2  text-primary hover:font-bold"}>
+              <a href={`/${directory}/${fileData.id}`} className={""}>
+                <h3 className={"hover:underline"}>{fileData.title}</h3>
+              </a>
+            </li>
+          ))}
+        </ul>
+        {hasMore && (
+          <a href={`/${directory}`} className="inline-block mt-4 text-orange-500 hover:text-orange-600 font-medium transition-colors">
+            See more →
+          </a>
+        )}
+      </>
   )
 }
 
