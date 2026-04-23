@@ -5,6 +5,8 @@ title: Countdown
 
 description: Letters and numbers
 
+sourceUrl: https://github.com/lincolnh0/countdown
+
 demoUrl: https://countdown.lncln.io
 
 publish_date: "2026-04-16"
