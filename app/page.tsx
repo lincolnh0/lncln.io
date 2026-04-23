@@ -1,87 +1,145 @@
-import PostListing from "../components/post_listing";
+import path from "path";
+import fs from "fs";
+import matter from "gray-matter";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-white">
-      {/* Minimal Header with Large Typography */}
-      <div className="container mx-auto px-6 py-20 md:py-32 max-w-4xl">
-        <div className="border-l-4 border-orange-500 pl-8 mb-20 home-container">
-          <h1 className="text-7xl md:text-8xl font-bold mb-4 text-slate-900 tracking-tight home-title">
-            l<span>nc</span>ln.<span>io</span>
-          </h1>
-          <p className="text-2xl md:text-3xl text-slate-600 font-light mb-2">
-            Software Engineer
-          </p>
-          <p className="text-lg text-slate-500 max-w-lg">
-            Crafting digital experiences through thoughtful code and design.
-          </p>
-        </div>
+async function getPostData(directory: string) {
+    const directoryPath = path.join(process.cwd(), `/public/markdowns/${directory}/`);
+    const files = fs.readdirSync(directoryPath);
+    const fileData = [];
+    for (const file of files) {
+        const markdown = await import(`../public/markdowns/${directory}/${file}`);
+        const content = matter(markdown.default);
+        fileData.push(content.data);
+    }
+    return fileData.sort((a, b) =>
+        new Date(b.publish_date).getTime() - new Date(a.publish_date).getTime()
+    );
+}
 
-        {/* Content Sections with Minimal Design */}
-        <div className="space-y-20">
-          {/* Projects Section */}
-          <section>
-            <div className="mb-8 pb-4 border-b-2 border-slate-200">
-              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">
-                Projects
-              </h2>
-              <p className="text-slate-600 mt-2">Selected works</p>
-            </div>
-            <div className="pl-4">
-              <PostListing directory="projects" limit={5} />
-            </div>
-          </section>
+export default async function Home() {
+    const projects = await getPostData("projects");
+    const blogs = await getPostData("blog");
+    const limitedProjects = projects.slice(0, 5);
+    const limitedBlogs = blogs.slice(0, 5);
 
-          {/* Blog Section */}
-          <section>
-            <div className="mb-8 pb-4 border-b-2 border-slate-200">
-              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">
-                Blog
-              </h2>
-              <p className="text-slate-600 mt-2">Thoughts and writings</p>
-            </div>
-            <div className="pl-4">
-              <PostListing directory="blog" limit={5} />
-            </div>
-          </section>
+    return (
+        <main className="min-h-screen bg-white text-black font-mono">
+            {/* Header */}
+            <header className="border-b-4 border-black brutal-header">
+                <div className="max-w-6xl mx-auto px-6 py-8 md:py-16">
+                    <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none brutal-title">
+                        l<span className="brutal-nc">nc</span>ln<span className="brutal-io text-white bg-black px-2 ml-1">.io</span>
+                    </h1>
+                    <div className="mt-6">
+                        <span className="bg-black text-white px-3 py-1 text-sm font-bold uppercase">Software Engineer</span>
+                    </div>
+                </div>
+            </header>
 
-          {/* Contact Section */}
-          <section className="border-t-2 border-slate-200 pt-12">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  Let&apos;s connect
-                </h3>
-                <p className="text-slate-600">
-                  Always open to interesting conversations and opportunities.
-                </p>
-              </div>
-              <div className="flex gap-6 text-slate-600">
-                <a href="mailto:me@lncln.io" className="hover:text-orange-500 transition-colors font-medium">
-                  Email
-                </a>
-                <span className="text-slate-300">•</span>
-                <a href="https://github.com/lincolnh0" className="hover:text-orange-500 transition-colors font-medium">
-                  GitHub
-                </a>
-                <span className="text-slate-300">•</span>
-                <a href="https://www.linkedin.com/in/lincoln-ho/" className="hover:text-orange-500 transition-colors font-medium">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+            <div className="max-w-6xl mx-auto px-6">
+                {/* Projects */}
+                <section className="border-b-4 border-black py-12">
+                    <div className="flex items-baseline gap-4 mb-8">
+                        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Projects</h2>
+                        <span className="text-sm font-bold border-2 border-black px-2 py-0.5">{projects.length}</span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                        {limitedProjects.map((project, i) => (
+                            <a
+                                key={project.id}
+                                href={`/projects/${project.id}`}
+                                className="block border-2 border-black p-5 -mt-0.5 -ml-0.5 hover:bg-black hover:text-white transition-colors duration-100"
+                            >
+                                <div className="flex items-start justify-between gap-4">
+                                    <div>
+                                        <span className="text-xs font-bold opacity-50">
+                                            {String(i + 1).padStart(2, "0")}
+                                        </span>
+                                        <h3 className="text-xl font-black uppercase mt-1">{project.title}</h3>
+                                        <p className="text-sm mt-2 opacity-70">{project.description}</p>
+                                    </div>
+                                    <span className="text-2xl font-black shrink-0">→</span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                    {projects.length > 5 && (
+                        <a href="/projects" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                            See all projects →
+                        </a>
+                    )}
+                </section>
 
-      {/* Minimal Footer */}
-      <footer className="border-t border-slate-200 mt-32">
-        <div className="container mx-auto px-6 py-8 max-w-4xl">
-          <p className="text-slate-500 text-sm">
-            © 2026 lncln.io — Design with intention
-          </p>
-        </div>
-      </footer>
-    </main>
-  );
+                {/* Blog */}
+                <section className="border-b-4 border-black py-12">
+                    <div className="flex items-baseline gap-4 mb-8">
+                        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Blog</h2>
+                        <span className="text-sm font-bold border-2 border-black px-2 py-0.5">{blogs.length}</span>
+                    </div>
+                    <div className="space-y-0">
+                        {limitedBlogs.map((post, i) => (
+                            <a
+                                key={post.id}
+                                href={`/blog/${post.id}`}
+                                className="flex items-center justify-between border-2 border-black p-4 -mt-0.5 hover:bg-black hover:text-white transition-colors duration-100 group"
+                            >
+                                <div className="flex items-center gap-6">
+                                    <span className="text-3xl font-black opacity-30 group-hover:opacity-60">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <div>
+                                        <h3 className="text-lg font-black uppercase">{post.title}</h3>
+                                        <p className="text-sm opacity-70">{post.description}</p>
+                                    </div>
+                                </div>
+                                <span className="text-2xl font-black shrink-0 ml-4">→</span>
+                            </a>
+                        ))}
+                    </div>
+                    {blogs.length > 5 && (
+                        <a href="/blog" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                            See all posts →
+                        </a>
+                    )}
+                </section>
+
+                {/* Contact */}
+                <section className="py-12">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8">Contact</h2>
+                    <div className="flex flex-wrap gap-4">
+                        <a
+                            href="mailto:me@lncln.io"
+                            className="border-4 border-black px-6 py-3 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors duration-100"
+                        >
+                            Email
+                        </a>
+                        <a
+                            href="https://github.com/lincolnh0"
+                            className="border-4 border-black px-6 py-3 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors duration-100"
+                        >
+                            GitHub
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/lincoln-ho/"
+                            className="border-4 border-black px-6 py-3 font-black uppercase text-lg hover:bg-black hover:text-white transition-colors duration-100"
+                        >
+                            LinkedIn
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            {/* Footer */}
+            <footer className="border-t-4 border-black">
+                <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-sm font-bold uppercase">
+                        &copy; 2026 lncln.io
+                    </p>
+                    <p className="text-xs font-bold uppercase opacity-50">
+                        No frills. No fluff. Just work.
+                    </p>
+                </div>
+            </footer>
+        </main>
+    );
 }

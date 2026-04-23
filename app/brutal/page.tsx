@@ -25,19 +25,19 @@ async function getPostData(directory: string) {
 export default async function BrutalHome() {
     const projects = await getPostData("projects");
     const blogs = await getPostData("blog");
+    const limitedProjects = projects.slice(0, 5);
+    const limitedBlogs = blogs.slice(0, 5);
 
     return (
         <main className="min-h-screen bg-white text-black font-mono">
             {/* Header */}
-            <header className="border-b-4 border-black">
+            <header className="border-b-4 border-black brutal-header">
                 <div className="max-w-6xl mx-auto px-6 py-8 md:py-16">
-                    <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none">
-                        lncln<span className="text-white bg-black px-2 ml-1">.io</span>
+                    <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none brutal-title">
+                        l<span className="brutal-nc">nc</span>ln<span className="brutal-io text-white bg-black px-2 ml-1">.io</span>
                     </h1>
-                    <div className="mt-6 flex flex-wrap gap-3">
+                    <div className="mt-6">
                         <span className="bg-black text-white px-3 py-1 text-sm font-bold uppercase">Software Engineer</span>
-                        <span className="border-2 border-black px-3 py-1 text-sm font-bold uppercase">Builder</span>
-                        <span className="border-2 border-black px-3 py-1 text-sm font-bold uppercase">Maker</span>
                     </div>
                 </div>
             </header>
@@ -50,7 +50,7 @@ export default async function BrutalHome() {
                         <span className="text-sm font-bold border-2 border-black px-2 py-0.5">{projects.length}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                        {projects.map((project, i) => (
+                        {limitedProjects.map((project, i) => (
                             <a
                                 key={project.id}
                                 href={`/projects/${project.id}`}
@@ -69,6 +69,11 @@ export default async function BrutalHome() {
                             </a>
                         ))}
                     </div>
+                    {projects.length > 5 && (
+                        <a href="/projects" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                            See all projects →
+                        </a>
+                    )}
                 </section>
 
                 {/* Blog */}
@@ -78,7 +83,7 @@ export default async function BrutalHome() {
                         <span className="text-sm font-bold border-2 border-black px-2 py-0.5">{blogs.length}</span>
                     </div>
                     <div className="space-y-0">
-                        {blogs.map((post, i) => (
+                        {limitedBlogs.map((post, i) => (
                             <a
                                 key={post.id}
                                 href={`/blog/${post.id}`}
@@ -97,6 +102,11 @@ export default async function BrutalHome() {
                             </a>
                         ))}
                     </div>
+                    {blogs.length > 5 && (
+                        <a href="/blog" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                            See all posts →
+                        </a>
+                    )}
                 </section>
 
                 {/* Contact */}
