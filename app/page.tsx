@@ -135,9 +135,6 @@ export default async function Home() {
                     <p className="text-sm font-bold uppercase">
                         &copy; 2026 lncln.io
                     </p>
-                    <p className="text-xs font-bold uppercase opacity-50">
-                        No frills. No fluff. Just work.
-                    </p>
                 </div>
             </footer>
         </main>
