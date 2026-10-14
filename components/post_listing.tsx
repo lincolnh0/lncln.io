@@ -41,7 +41,7 @@ async function getPostData(directory: string) {
   const fileData = [];
   const files = fs.readdirSync(directoryPath);
   for await (const file of files ) {
-    const markdown = await import(`public/markdowns/${directory}/${file}`);
+    const markdown = await import(`@/public/markdowns/${directory}/${file}`);
     const content = matter(markdown.default);
     fileData.push(content.data);
   }

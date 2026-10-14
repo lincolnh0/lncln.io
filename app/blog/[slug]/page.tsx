@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {marked} from "marked";
 import matter from 'gray-matter';
 import path from "path";
@@ -7,11 +8,11 @@ import {ArrowLeft, Download} from "lucide-react";
 import { Metadata } from 'next';
 
 type Props = {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug } = params;
+    const { slug } = await params;
     const data: any = await import(`../../../public/markdowns/blog/${slug}.md`);
     const content = matter(data.default);
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Blog({ params }: Props) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const data: any = await import(`../../../public/markdowns/blog/${slug}.md`);
     const content = matter(data.default);
@@ -32,10 +33,10 @@ export default async function Blog({ params }: Props) {
     return (
         <div className="min-h-screen bg-white text-black font-mono py-12">
             <div className="max-w-3xl mx-auto px-6">
-                <a className="inline-flex items-center gap-2 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100 mb-8" href="/">
+                <Link className="inline-flex items-center gap-2 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100 mb-8" href="/">
                     <ArrowLeft size={16} />
                     Back to home
-                </a>
+                </Link>
 
                 <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-2">
                     {frontmatter.title}

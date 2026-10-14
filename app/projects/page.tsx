@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
@@ -29,10 +30,10 @@ export default async function Projects() {
     return (
         <div className="min-h-screen bg-white text-black font-mono">
             <div className="max-w-6xl mx-auto px-6 py-12">
-                <a className="inline-flex items-center gap-2 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100 mb-8" href="/">
+                <Link className="inline-flex items-center gap-2 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100 mb-8" href="/">
                     <ArrowLeft size={16} />
                     Back to home
-                </a>
+                </Link>
                 <div className="flex items-baseline gap-4 mb-8 pb-4 border-b-4 border-black">
                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Projects</h2>
                     <span className="text-sm font-bold border-2 border-black px-2 py-0.5">{projects.length}</span>

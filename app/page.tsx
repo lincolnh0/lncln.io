@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
@@ -64,9 +65,9 @@ export default async function Home() {
                         ))}
                     </div>
                     {projects.length > 6 && (
-                        <a href="/projects" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                        <Link href="/projects" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
                             See all projects →
-                        </a>
+                        </Link>
                     )}
                 </section>
 
@@ -97,9 +98,9 @@ export default async function Home() {
                         ))}
                     </div>
                     {blogs.length > 6 && (
-                        <a href="/blog" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
+                        <Link href="/blog" className="inline-block mt-6 border-2 border-black px-4 py-2 font-bold uppercase text-sm hover:bg-black hover:text-white transition-colors duration-100">
                             See all posts →
-                        </a>
+                        </Link>
                     )}
                 </section>
 
